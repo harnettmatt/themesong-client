@@ -11,9 +11,11 @@
   <div class="buttons-container">
     <div class="step">
       Step 1
-      <button class="step-content">
-        <img id="strava" src="@/assets/strava/connect_with_strava.png" />
-      </button>
+      <a href="http://localhost:8000/strava/login">
+        <button class="step-content">
+          <img id="strava" src="@/assets/strava/connect_with_strava.png" />
+        </button>
+      </a>
     </div>
     <div class="step">
       Step 2
@@ -22,7 +24,7 @@
       </button>
     </div>
   </div>
-  <img id="powered-by-strava" src="@/assets/strava/powered_by_strava.png">
+  <img id="powered-by-strava" src="@/assets/strava/powered_by_strava.png" />
 </template>
 
 <style>
