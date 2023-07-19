@@ -1,41 +1,8 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { useRoute } from 'vue-router';
-const route = useRoute()
-const userId = computed(() => {
-  return route.params.userId
-})
-
 </script>
 
 <template>
-  <div id="app" class="intro">
-    <h1>Welcome to ThemeSong! </h1>
-    <h4>ThemeSong is designed for Strava athletes that listen to music while exercising. Log an activity and ThemeSong
-      will determine which song got you the most fired up and post it in the activity
-      description.</h4>
-  </div>
-  <div class="buttons-container">
-    <div class="step">
-      Step 1
-      <a href="http://localhost:8000/strava/login" class="link">
-        <img id="strava" class="step-content" src="@/assets/strava/connect_with_strava.png" />
-      </a>
-      <div class="checkmark-container">
-        <img class="checkmark" src="@/assets/checkmark.png" />
-      </div>
-    </div>
-    <div class="step">
-      Step 2
-      <a href="http://localhost:8000/strava/login" class="link">
-        <img id="spotify" class="step-content" src="@/assets/spotify/connect_with_spotify.png" />
-      </a>
-      <div class="checkmark-container">
-        <img class="checkmark" src="@/assets/checkmark.png" />
-      </div>
-    </div>
-  </div>
-  <img id="powered-by-strava" src="@/assets/strava/powered_by_strava.png" />
+  <RouterView />
 </template>
 
 <style>
