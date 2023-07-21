@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { store } from '../stores/store';
+import { computed } from 'vue';
+
+const stravaUserId = localStorage.getItem('stravaUserId');
+const spotifyUserId = localStorage.getItem('spotifyUserId');
 </script>
 
 <template>
@@ -11,24 +14,30 @@ import { store } from '../stores/store';
     </div>
     <div class="buttons-container">
         <div class="step">
-            Step 1
-            <a href="http://localhost:8000/strava/login" class="link">
-                <img id="strava" class="step-content" src="@/assets/strava/connect_with_strava.png" />
+            <h4>1</h4>
+            <img v-if="stravaUserId" class="step-content" src="@/assets/strava/connect_with_strava_grayscale.png" />
+            <a v-else href="http://localhost:8000/strava/login" class="link">
+                <img class="step-content" src="@/assets/strava/connect_with_strava.png" />
             </a>
             <div class="checkmark-container">
-                <img class="checkmark" src="@/assets/checkmark.png" />
+                <img v-if=stravaUserId class="checkmark" src="@/assets/checkmark.png" />
+                <img v-else class="checkmark" src="@/assets/checkmark-placeholder.png" />
             </div>
-            Strava User Id: {{ store.stravaUserId }}
         </div>
         <div class="step">
-            Step 2
-            <a :href="'http://localhost:8000/spotify/login?user_id=' + store.stravaUserId" class="link">
+            <h4>2</h4>
+            <img v-if="spotifyUserId" id="spotify" class="step-content"
+                src="@/assets/spotify/connect_with_spotify_grayscale.png" />
+            <a v-else :href="'http://localhost:8000/spotify/login?user_id=' + stravaUserId" class="link">
                 <img id="spotify" class="step-content" src="@/assets/spotify/connect_with_spotify.png" />
             </a>
             <div class="checkmark-container">
-                <img class="checkmark" src="@/assets/checkmark.png" />
+                <img v-if="spotifyUserId" class="checkmark" src="@/assets/checkmark.png" />
+                <img v-else class="checkmark" src="@/assets/checkmark-placeholder.png" />
             </div>
-            Spotify User Id: {{ store.spotifyUserId }}
+        </div>
+        <div v-if="stravaUserId && spotifyUserId">
+            <h4>All set! Go log an activity!</h4>
         </div>
     </div>
     <img id="powered-by-strava" src="@/assets/strava/powered_by_strava.png" />
