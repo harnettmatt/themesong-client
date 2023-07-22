@@ -49,7 +49,7 @@ body {
     background-color: rgb(73, 73, 73);
     margin: 0;
     padding: 5px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Verdana, sans-serif;
     color: white;
     line-height: 1.5;
 }
