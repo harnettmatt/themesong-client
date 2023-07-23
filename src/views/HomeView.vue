@@ -26,7 +26,7 @@ const spotifyUserId = localStorage.getItem('spotifyUserId');
         </div>
         <div class="step">
             <h4>2</h4>
-            <img v-if="spotifyUserId" id="spotify" class="step-content"
+            <img v-if="spotifyUserId || !stravaUserId" id="spotify" class="step-content"
                 src="@/assets/spotify/connect_with_spotify_grayscale.png" />
             <a v-else :href="'http://localhost:8000/spotify/login?user_id=' + stravaUserId" class="link">
                 <img id="spotify" class="step-content" src="@/assets/spotify/connect_with_spotify.png" />
