@@ -1,15 +1,15 @@
 # All
 start:
-	docker-compose up -d
+	docker compose up -d
 
 rebuild:
-	docker-compose up --build --force-recreate --detach
+	docker compose up --build --force-recreate --detach
 
 stop:
-	docker-compose down
+	docker compose down
 
 delete:
-	docker-compose down --volumes
+	docker compose down --volumes
 
 # Local
 start-local:
