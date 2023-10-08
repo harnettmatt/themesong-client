@@ -16,7 +16,7 @@ const spotifyUserId = localStorage.getItem('spotifyUserId');
         <div class="step">
             <h4>1</h4>
             <img v-if="stravaUserId" class="step-content" src="@/assets/strava/connect_with_strava_grayscale.png" />
-            <a v-else href="http://localhost:8000/strava/login" class="link">
+            <a v-else href="http://themesong.io/api/strava/login" class="link">
                 <img class="step-content" src="@/assets/strava/connect_with_strava.png" />
             </a>
             <div class="checkmark-container">
@@ -28,7 +28,7 @@ const spotifyUserId = localStorage.getItem('spotifyUserId');
             <h4>2</h4>
             <img v-if="spotifyUserId || !stravaUserId" id="spotify" class="step-content"
                 src="@/assets/spotify/connect_with_spotify_grayscale.png" />
-            <a v-else :href="'http://localhost:8000/spotify/login?user_id=' + stravaUserId" class="link">
+            <a v-else :href="'http://themesong.io/api/spotify/login?user_id=' + stravaUserId" class="link">
                 <img id="spotify" class="step-content" src="@/assets/spotify/connect_with_spotify.png" />
             </a>
             <div class="checkmark-container">
