@@ -1,22 +1,17 @@
-FROM node:lts-alpine
-
+# build stage
+FROM node:lts-alpine as build-stage
 # Make the working directory
-WORKDIR /code
-
+WORKDIR /app
 # Copy files
-COPY package.json /code/package.json
-COPY package-lock.json /code/package-lock.json
-COPY . .
-
+COPY package*.json ./
 # Install dependencies
 RUN npm install
-
-# Build
+COPY . .
 RUN npm run build
 
-# Intall http-server
-RUN npm install -g http-server
-
-# Run
-EXPOSE 8080
-CMD [ "http-server", "dist" ]
+# production stage
+FROM nginx:stable-alpine as production-stage
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
