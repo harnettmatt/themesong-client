@@ -3,7 +3,7 @@
 const stravaUserId = localStorage.getItem('stravaUserId');
 const spotifyUserId = localStorage.getItem('spotifyUserId');
 
-const BE_HOST = import.meta.env.VUE_APP_BE_HOST;
+const BE_HOST = import.meta.env.VITE_BE_HOST;
 
 </script>
 
