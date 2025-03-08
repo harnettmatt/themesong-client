@@ -1,6 +1,7 @@
 version: '3.8'
 services:
   fe:
+    container_name: themesong-client
     build:
       context: .
       dockerfile: Dockerfile
