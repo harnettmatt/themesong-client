@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  fe:
+  client:
     container_name: themesong-client
     build:
       context: .
