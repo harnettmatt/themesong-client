@@ -2,8 +2,11 @@
 start:
 	docker compose up
 
+watch:
+	docker compose up --build --force-recreate --watch
+
 rebuild:
-	docker compose up --build --force-recreate
+	docker compose up --build --force-recreate --detach
 
 stop:
 	docker compose down

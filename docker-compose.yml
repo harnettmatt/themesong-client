@@ -1,6 +1,7 @@
 version: '3.8'
 services:
-  fe:
+  client:
+    container_name: themesong-client
     build:
       context: .
       dockerfile: Dockerfile
@@ -8,3 +9,8 @@ services:
       - .env
     ports:
       - '8080:8080'
+    networks:
+      - themesong-network
+networks:
+  themesong-network:
+    external: true
