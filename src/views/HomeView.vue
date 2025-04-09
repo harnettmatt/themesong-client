@@ -13,7 +13,7 @@ const BE_HOST = import.meta.env.VITE_BE_HOST;
     <h4 class="subtitle">Connecting athletes with their Theme Song</h4>
     <img src="@/assets/themesong-secondary-logo.png" alt="Theme Song Secondary Logo" class="secondary-logo" />
     <h4 class="subtitle">Theme Song finds the Spotify track playing during your highest heart rate moment and adds it as the soundtrack to your Strava activity</h4>
-    <h4 v-if="stravaUserId || spotifyUserId" class="subtitle italic white">Log in below to get started!</h4>
+    <h4 v-if="!stravaUserId || !spotifyUserId" class="subtitle italic white">Log in below to get started!</h4>
     <div class="buttons-container">
       <a v-if="!stravaUserId" :href="BE_HOST + '/strava/login'" class="button">
         <img src="@/assets/strava/connect_with_strava.png" alt="Connect with Strava" />
@@ -32,8 +32,8 @@ const BE_HOST = import.meta.env.VITE_BE_HOST;
         <img src="@/assets/spotify/connect_with_spotify_grayscale.png" alt="Connected to Spotify" />
       </a>
     </div>
-    <h4 class="subtitle">All set! Go log an activity!</h4>
-    <div class="account-management-container">
+    <h4 v-if="stravaUserId && spotifyUserId" class="subtitle">All set! Go log an activity!</h4>
+    <div v-if="stravaUserId && spotifyUserId" class="account-management-container">
       <h4 class="account-management-title">Account Management</h4>
       <div class="account-buttons">
         <button class="account-button">Log Out</button>
