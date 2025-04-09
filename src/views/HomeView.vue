@@ -95,7 +95,7 @@ body {
   margin: 0px 0; /* Reduced margin to minimize spacing */
   color: #ffd700; /* Adjusted to a brighter yellow */
   text-align: center; /* Center the subtitle text */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Added subtle shadow for better contrast */
+  text-shadow: 2px 2px 2px rgb(0, 0, 0); /* Added subtle shadow for better contrast */
 }
 
 .italic {
