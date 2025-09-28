@@ -93,9 +93,12 @@ body {
 .subtitle {
   font-size: 1.0rem;
   margin: 0px 0; /* Reduced margin to minimize spacing */
-  color: #ffd700; /* Adjusted to a brighter yellow */
+  color: #db5501; /* Adjusted to a brighter yellow */
   text-align: center; /* Center the subtitle text */
   /* text-shadow: 2px 2px 2px rgb(0, 0, 0); Added subtle shadow for better contrast */
+  background-color: #7bbafc; /* Added a light background for better visibility */
+  padding: 5px 10px; /* Added padding to create space around the text */
+  border-radius: 5px; /* Rounded corners for the background */
 }
 
 .white {
