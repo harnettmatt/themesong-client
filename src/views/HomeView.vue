@@ -13,7 +13,7 @@ const BE_HOST = import.meta.env.VITE_BE_HOST;
     <h4 class="subtitle">Connecting athletes with their Theme Song</h4>
     <img src="@/assets/themesong-secondary-logo.png" alt="Theme Song Secondary Logo" class="secondary-logo" />
     <h4 class="subtitle">Theme Song finds the Spotify track playing during your highest heart rate moment and adds it as the soundtrack to your Strava activity</h4>
-    <h4 v-if="!stravaUserId || !spotifyUserId" class="subtitle italic white">Log in below to get started!</h4>
+    <h4 v-if="!stravaUserId || !spotifyUserId" class="subtitle white">Log in below to get started!</h4>
     <div class="buttons-container">
       <a v-if="!stravaUserId" :href="BE_HOST + '/strava/login'" class="button">
         <img src="@/assets/strava/connect_with_strava.png" alt="Connect with Strava" />
@@ -64,12 +64,12 @@ body {
 }
 
 .title-logo {
-  width: 450px; /* Increased from 300px to 1.5x size */
-  margin-bottom: 20px;
+  width: 370px; /* Increased from 300px to 1.5x size */
+  margin-bottom: 0px;
 }
 
 .secondary-logo {
-  width: 450px; /* 1.5x the size of the main logo (300px * 1.5) */
+  width: 300px; /* 1.5x the size of the main logo (300px * 1.5) */
   margin: 20px auto;
   display: block; /* Ensures the image is centered */
 }
@@ -91,15 +91,11 @@ body {
 }
 
 .subtitle {
-  font-size: 1.6rem;
+  font-size: 1.0rem;
   margin: 0px 0; /* Reduced margin to minimize spacing */
   color: #ffd700; /* Adjusted to a brighter yellow */
   text-align: center; /* Center the subtitle text */
-  text-shadow: 2px 2px 2px rgb(0, 0, 0); /* Added subtle shadow for better contrast */
-}
-
-.italic {
-  font-style: italic;
+  /* text-shadow: 2px 2px 2px rgb(0, 0, 0); Added subtle shadow for better contrast */
 }
 
 .white {

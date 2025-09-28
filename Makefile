@@ -21,3 +21,6 @@ start-local:
 # Dev Tools
 lint:
 	pre-commit run --all-files
+
+public:
+	ngrok http http://localhost:5173/
